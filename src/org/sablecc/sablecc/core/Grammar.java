@@ -104,6 +104,11 @@ public class Grammar
             }
 
         }
+
+        if (this.globalAnonymousContext == null && this.namedContexts.isEmpty()) {
+            throw SemanticException
+                    .genericError("The Lexer and the Parser are both empty.");
+        }
     }
 
     @Override
